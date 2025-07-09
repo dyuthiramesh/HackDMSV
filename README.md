@@ -1,6 +1,4 @@
-````markdown
 # VulneraTrack — LLM‑Powered Automated Patch‑Management Workflow  
-*(Hackathon Edition)*
 
 > “Upload an Nmap scan → get an action‑ready, exec‑friendly PDF report in under 2 minutes.”
 
