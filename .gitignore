@@ -1,0 +1,9 @@
+# Secrets & local config
+.env
+
+# Python artefacts
+__pycache__/
+*.py[cod]
+
+# Virtual‑env
+.venv/
