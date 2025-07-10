@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HackDMSV - Patch Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>HackDMSV</h1>
+        <h2>Vulnerability Patch Management using LLM</h2>
+      </header>
+
+      <section class="instructions">
+        <p>
+          Please upload your <strong>XML report</strong>. Once uploaded, click
+          "Analyse" to generate your final patch report.
+        </p>
+      </section>
+
+      <section class="upload-section">
+        <div id="drop-area">
+          <form class="my-form">
+            <p>Drag and drop your XML file here, or</p>
+            <input
+              type="file"
+              id="fileElem"
+              accept=".xml"
+              onchange="handleFiles(this.files)"
+            />
+            <hr />
+            <label class="button" for="fileElem">Browse File</label>
+          </form>
+          <hr />
+          <p id="fileName" class="file-name"></p>
+          <!-- Show file name -->
+        </div>
+      </section>
+
+      <section class="actions">
+        <button id="analyseBtn" disabled>Analyse</button>
+      </section>
+
+      <section class="loading hidden" id="loading">
+        <div class="loader"></div>
+        <p>Generating report. Please wait...</p>
+      </section>
+
+      <section class="result hidden" id="resultSection">
+        <iframe id="pdfViewer" width="100%" height="600px"></iframe>
+        <button id="downloadBtn">Download Report PDF</button>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
