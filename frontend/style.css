@@ -1,5 +1,5 @@
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Cascadia Code", Cascadia;
   margin: 0;
   padding: 0;
   background: linear-gradient(to right, #1c1c1e, #2d2d30);
@@ -14,7 +14,7 @@ body {
 
 header h1 {
   font-size: 2.8rem;
-  color: #00d1ff;
+  color: #00ff00;
   margin-bottom: 0;
 }
 
@@ -24,18 +24,40 @@ header h2 {
   color: #ccc;
 }
 
-hr {
-  opacity: 0;
+.input-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #ccc;
 }
 
 .instructions {
   margin-top: 20px;
   font-size: 1.1rem;
-  background-color: #2a2a2d;
+  background-color: rgb(1, 33, 0);
   padding: 15px 20px;
-  border-left: 4px solid #00d1ff;
+  border-left: 4px solidrgb(0, 255, 13);
   border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0, 209, 255, 0.1);
+  box-shadow: 0 0 8px rgba(0, 255, 55, 0.1);
+}
+
+textarea#xmlInput {
+  width: 100%;
+  font-family: monospace;
+  font-size: 1rem;
+  padding: 15px;
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  background-color: #2d2d30;
+  color: #f0f0f0;
+  resize: vertical;
+  transition: border 0.3s ease;
+}
+
+textarea#xmlInput:focus {
+  border-color: rgb(0, 221, 11);
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 255, 47, 0.3);
 }
 
 .upload-section {
@@ -43,11 +65,11 @@ hr {
 }
 
 #drop-area {
-  border: 2px dashed #00d1ff;
+  border: 2px dashed #00ff00;
   padding: 40px;
   text-align: center;
   border-radius: 12px;
-  background-color: #2d2d30;
+  background-color: rgb(0, 107, 37);
   transition: 0.3s ease;
 }
 
@@ -65,7 +87,7 @@ input[type="file"] {
 }
 
 .button {
-  background-color: #00d1ff;
+  background-color: #00ff00;
   padding: 10px 24px;
   color: #1c1c1e;
   font-weight: bold;
@@ -75,7 +97,7 @@ input[type="file"] {
 }
 
 .button:hover {
-  background-color: #00b4dd;
+  background-color: rgb(0, 221, 33);
 }
 
 .file-name {
@@ -118,7 +140,7 @@ input[type="file"] {
 
 .loader {
   border: 6px solid #333;
-  border-top: 6px solid #00d1ff;
+  border-top: 6px solid #00ff00;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -139,7 +161,7 @@ input[type="file"] {
 
 #downloadBtn {
   margin-top: 15px;
-  background-color: #00d1ff;
+  background-color: #00ff00;
   color: #1c1c1e;
   padding: 10px 24px;
   border: none;
@@ -150,7 +172,7 @@ input[type="file"] {
 }
 
 #downloadBtn:hover {
-  background-color: #00b4dd;
+  background-color: rgb(0, 221, 0);
 }
 
 .hidden {

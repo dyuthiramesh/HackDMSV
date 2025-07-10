@@ -1,22 +1,11 @@
-let selectedFile = null;
-
-function handleFiles(files) {
-  const file = files[0];
-  const fileNameDisplay = document.getElementById("fileName");
-
-  if (file && file.name.endsWith(".xml")) {
-    selectedFile = file;
-    document.getElementById("analyseBtn").disabled = false;
-    fileNameDisplay.textContent = `📄 Uploaded: ${file.name}`;
-  } else {
-    alert("Please upload a valid .xml file");
-    fileNameDisplay.textContent = "";
-    document.getElementById("analyseBtn").disabled = true;
-  }
-}
+document.getElementById("xmlInput").addEventListener("input", () => {
+  const xmlText = document.getElementById("xmlInput").value.trim();
+  document.getElementById("analyseBtn").disabled = xmlText.length === 0;
+});
 
 document.getElementById("analyseBtn").addEventListener("click", async () => {
-  if (!selectedFile) return;
+  const xmlText = document.getElementById("xmlInput").value.trim();
+  if (!xmlText) return;
 
   document.getElementById("loading").classList.remove("hidden");
   document.getElementById("analyseBtn").disabled = true;
@@ -36,16 +25,15 @@ document.getElementById("analyseBtn").addEventListener("click", async () => {
       a.click();
     };
   }, 3000); // Simulate delay
-  // === SIMULATION END ===
 
-  // === BACKEND INTEGRATION (Remove above when using API) ===
+  // === BACKEND INTEGRATION (Remove simulation when API is ready) ===
   /*
-  const formData = new FormData();
-  formData.append("file", selectedFile);
-
-  const response = await fetch("http://localhost:8000/analyse", {
+  const response = await fetch("http://localhost:8000/analyse-text", {
     method: "POST",
-    body: formData,
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ xml: xmlText })
   });
 
   const blob = await response.blob();

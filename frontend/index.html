@@ -15,12 +15,20 @@
 
       <section class="instructions">
         <p>
-          Please upload your <strong>XML report</strong>. Once uploaded, click
-          "Analyse" to generate your final patch report.
+          Please upload the <strong>web link or IP address</strong> to be
+          checked. Once uploaded, click "Analyse" to generate your final patch
+          report.
         </p>
       </section>
 
       <section class="upload-section">
+        <label for="xmlInput" class="input-label"
+          >Paste your XML content below:</label
+        >
+        <textarea id="xmlInput" placeholder="scanme.nmap.org"></textarea>
+      </section>
+
+      <!-- <section class="upload-section">
         <div id="drop-area">
           <form class="my-form">
             <p>Drag and drop your XML file here, or</p>
@@ -34,10 +42,10 @@
             <label class="button" for="fileElem">Browse File</label>
           </form>
           <hr />
-          <p id="fileName" class="file-name"></p>
-          <!-- Show file name -->
-        </div>
-      </section>
+          <p id="fileName" class="file-name"></p> -->
+      <!-- Show file name -->
+      <!-- </div>
+      </section> -->
 
       <section class="actions">
         <button id="analyseBtn" disabled>Analyse</button>
